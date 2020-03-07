@@ -1,3 +1,5 @@
+.idea
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -109,6 +111,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Secrets
+nitrapi_account_config.json
 
 # Spyder project settings
 .spyderproject

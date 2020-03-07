@@ -1,0 +1,45 @@
+{
+  "base_trigger": "v!",
+  "commands": [
+    {
+      "trigger": "bot_status",
+      "description": "Responds with the bot status",
+      "function": "bot_status",
+      "arg_num": 0,
+      "arg_names": [],
+      "examples": ["bot_status"]
+    },
+    {
+      "trigger": "status",
+      "description": "Current status of a gameserver",
+      "function": "status",
+      "arg_num": 1,
+      "arg_names": ["gameserver"],
+      "examples": ["status ragnarok"]
+    },
+    {
+      "trigger": "shutdown",
+      "description": "Shutdown a gameserver",
+      "function": "shutdown",
+      "arg_num": 1,
+      "arg_names": ["gameserver"],
+      "examples": ["shutdown valguero"]
+    },
+    {
+      "trigger": "start",
+      "description": "Start a gameserver",
+      "function": "start",
+      "arg_num": 1,
+      "arg_names": ["gameserver"],
+      "examples": ["start aberration"]
+    },
+    {
+      "trigger": "restart",
+      "description": "Restart a gameserver",
+      "function": "restart",
+      "arg_num": 1,
+      "arg_names": ["gameserver"],
+      "examples": ["restart the_center"]
+    }
+  ]
+}
