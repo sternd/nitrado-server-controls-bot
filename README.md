@@ -17,13 +17,16 @@ Then add the auth_tokens for each of the Nitrado accounts into the config.
 Create a copy of ".env_template" as ".env".
 Add the values for: DISCORD_TOKEN, DISCORD_GUILD, and DISCORD_CHANNEL
 
+## Docker Build
+```bash
+docker build -t nitrado-server-controls-bot .
+```
+
 ## Usage
 
 ```bash
-python3 app/bot.py
+docker run nitrado-server-controls-bot
 ```
-
-## Docker
 
 ## Deployment
 
