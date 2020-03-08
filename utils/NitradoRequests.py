@@ -7,6 +7,8 @@ class NitradoRequests:
     NITRAPI_GAMESERVER_BOOST_HISTORY = "/services/:id/gameservers/boost/history"
     NITRAPI_GAMESERVER_DETAILS = "/services/:id/gameservers"
     NITRAPI_SERVICES = "/services"
+    NITRAPI_GAMESERVER_RESTART = "/services/:id/gameservers/restart"
+    NITRAPI_GAMESERVER_STOP = "/services/:id/gameservers/stop"
 
     # Send a Discord API request
     def sendNitrapiRequest(self, action, token, url, params=None):
@@ -56,3 +58,13 @@ class NitradoRequests:
         url = self.NITRAPI_BASE_URL + self.NITRAPI_SERVICES
 
         return self.sendNitrapiRequest("GET", token, url)
+
+    def restartGameserver(self, token, gameserver_id):
+        url = self.NITRAPI_BASE_URL + self.NITRAPI_GAMESERVER_RESTART.replace(':id', gameserver_id, 1)
+
+        return self.sendNitrapiRequest("POST", token, url)
+
+    def stopGameserver(self, token, gameserver_id):
+        url = self.NITRAPI_BASE_URL + self.NITRAPI_GAMESERVER_STOP.replace(':id', gameserver_id, 1)
+
+        return self.sendNitrapiRequest("POST", token, url)

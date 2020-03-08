@@ -7,39 +7,53 @@
       "function": "bot_status",
       "arg_num": 0,
       "arg_names": [],
-      "examples": ["bot_status"]
+      "examples": ["bot_status"],
+      "enabled": true
     },
     {
       "trigger": "status",
       "description": "Current status of a gameserver",
-      "function": "status",
+      "function": "gameserver_status",
       "arg_num": 1,
-      "arg_names": ["gameserver"],
-      "examples": ["status ragnarok"]
+      "arg_names": ["server_name"],
+      "examples": ["status ragnarok"],
+      "enabled": true
     },
     {
       "trigger": "shutdown",
       "description": "Shutdown a gameserver",
-      "function": "shutdown",
+      "function": "gameserver_stop",
       "arg_num": 1,
-      "arg_names": ["gameserver"],
-      "examples": ["shutdown valguero"]
+      "arg_names": ["server_name"],
+      "examples": ["shutdown valguero"],
+      "enabled": true
     },
     {
       "trigger": "start",
       "description": "Start a gameserver",
-      "function": "start",
+      "function": "gameserver_start",
       "arg_num": 1,
-      "arg_names": ["gameserver"],
-      "examples": ["start aberration"]
+      "arg_names": ["server_name"],
+      "examples": ["start aberration"],
+      "enabled": true
     },
     {
       "trigger": "restart",
       "description": "Restart a gameserver",
-      "function": "restart",
+      "function": "gameserver_restart",
       "arg_num": 1,
-      "arg_names": ["gameserver"],
-      "examples": ["restart the_center"]
+      "arg_names": ["server_name"],
+      "examples": ["restart the_center"],
+      "enabled": true
+    },
+    {
+      "trigger": "help",
+      "description": "Helpful information on using the bot",
+      "function": "bot_help",
+      "arg_num": 0,
+      "arg_names": [],
+      "examples": ["help"],
+      "enabled": true
     }
   ]
 }
