@@ -194,9 +194,10 @@ COMMAND_FUNCTIONS["gameserver_status"] = gameserver_status
 def gameserver_restart(message, client, args):
     print(f'Executed: {message.content}')
     gameserver_credentials = get_gameserver_credentials(args[0])
+    gameserver_name = gameserver_credentials['gameserver_name']
 
     if not gameserver_credentials:
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Restart', DISCORD_RED, 'No gameserver credentials')
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Restart', DISCORD_RED, 'No gameserver credentials')
         return generate_embed(error_embed_params)
 
     auth_token = gameserver_credentials['auth_token']
@@ -211,7 +212,7 @@ def gameserver_restart(message, client, args):
     if not response:
         error = 'Error restarting the gameserver'
         print(error)
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Restart', DISCORD_RED, error)
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Restart', DISCORD_RED, error)
         return generate_embed(error_embed_params)
 
     if 'status' not in response or response['status'] != 'success':
@@ -221,11 +222,11 @@ def gameserver_restart(message, client, args):
             error = 'Error restarting service: ' + response['message']
 
         print(error)
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Restart', DISCORD_RED, error)
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Restart', DISCORD_RED, error)
         return generate_embed(error_embed_params)
 
     line = generate_embed_line("Action", "Restart has been requested")
-    embed_params = generate_embed_params(message, "Gameserver Restart", DISCORD_GREEN, [line])
+    embed_params = generate_embed_params(message, f'{gameserver_name} Restart', DISCORD_GREEN, [line])
     embed = generate_embed(embed_params)
 
     return embed
@@ -237,9 +238,10 @@ COMMAND_FUNCTIONS["gameserver_restart"] = gameserver_restart
 def gameserver_shutdown(message, client, args):
     print(f'Executed: {message.content}')
     gameserver_credentials = get_gameserver_credentials(args[0])
+    gameserver_name = gameserver_credentials['gameserver_name']
 
     if not gameserver_credentials:
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Shutdown', DISCORD_RED, 'No gameserver credentials')
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Shutdown', DISCORD_RED, 'No gameserver credentials')
         return generate_embed(error_embed_params)
 
     auth_token = gameserver_credentials['auth_token']
@@ -254,7 +256,7 @@ def gameserver_shutdown(message, client, args):
     if not response:
         error = 'Error shutting down the gameserver'
         print(error)
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Shutdown', DISCORD_RED, error)
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Shutdown', DISCORD_RED, error)
         return generate_embed(error_embed_params)
 
     if 'status' not in response or response['status'] != 'success':
@@ -264,11 +266,11 @@ def gameserver_shutdown(message, client, args):
             error = 'Error shutting down service: ' + response['message']
 
         print(error)
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Shutdown', DISCORD_RED, error)
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Shutdown', DISCORD_RED, error)
         return generate_embed(error_embed_params)
 
     line = generate_embed_line("Action", "Shutdown has been requested")
-    embed_params = generate_embed_params(message, "Gameserver Shutdown", DISCORD_GREEN, [line])
+    embed_params = generate_embed_params(message, f'{gameserver_name} Shutdown', DISCORD_GREEN, [line])
     embed = generate_embed(embed_params)
 
     return embed
@@ -280,9 +282,10 @@ COMMAND_FUNCTIONS["gameserver_shutdown"] = gameserver_shutdown
 def gameserver_start(message, client, args):
     print(f'Executed: {message.content}')
     gameserver_credentials = get_gameserver_credentials(args[0])
+    gameserver_name = gameserver_credentials['gameserver_name']
 
     if not gameserver_credentials:
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Start', DISCORD_RED, 'No gameserver credentials')
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Start', DISCORD_RED, 'No gameserver credentials')
         return generate_embed(error_embed_params)
 
     auth_token = gameserver_credentials['auth_token']
@@ -297,7 +300,7 @@ def gameserver_start(message, client, args):
     if not response:
         error = 'Error starting the gameserver'
         print(error)
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Start', DISCORD_RED, error)
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Start', DISCORD_RED, error)
         return generate_embed(error_embed_params)
 
     if 'status' not in response or response['status'] != 'success':
@@ -307,11 +310,11 @@ def gameserver_start(message, client, args):
             error = 'Error starting service: ' + response['message']
 
         print(error)
-        error_embed_params = generate_error_embed_params(message, 'Gameserver Start', DISCORD_RED, error)
+        error_embed_params = generate_error_embed_params(message, f'{gameserver_name} Start', DISCORD_RED, error)
         return generate_embed(error_embed_params)
 
     line = generate_embed_line("Action", "Start has been requested")
-    embed_params = generate_embed_params(message, "Gameserver Start", DISCORD_GREEN, [line])
+    embed_params = generate_embed_params(message, f'{gameserver_name} Start', DISCORD_GREEN, [line])
     embed = generate_embed(embed_params)
 
     return embed
