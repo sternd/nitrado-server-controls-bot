@@ -22,7 +22,7 @@
     {
       "trigger": "shutdown",
       "description": "Shutdown a gameserver",
-      "function": "gameserver_stop",
+      "function": "gameserver_shutdown",
       "arg_num": 1,
       "arg_names": ["server_name"],
       "examples": ["shutdown valguero"],

@@ -18,12 +18,25 @@ Create a copy of ".env_template" as ".env".
 Add the values for: DISCORD_TOKEN, DISCORD_GUILD, and DISCORD_CHANNEL
 
 ## Usage
-
+Build Docker container
 ```bash
-python3 app/bot.py
+docker build -t nitrado-server-controls-bot .
 ```
 
-## Docker
+Run app using Docker
+```bash
+docker run nitrado-server-controls-bot
+```
+
+See running Docker containers
+```bash
+docker ps
+```
+
+Kill running Docker container
+```bash
+docker kill PID
+```
 
 ## Deployment
 
